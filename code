@@ -9,7 +9,7 @@ def writing(score1,score2):
 
 
 def game(score1, score2):
-    while score1 !=3 and score2 !=3:
+    while score1 !=3 or score2 !=3:
         move_1 =input("Player one move ")
         move_2 = input("Player two move ")
 
