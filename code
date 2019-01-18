@@ -1,0 +1,59 @@
+score1 = 0
+score2 = 0
+
+def writing(score1,score2):
+    print("Player one score: %s" %score1)
+    print("Plater two score: %s" %score2)
+
+
+
+
+def game(score1, score2):
+    while score1 !=3 and score2 !=3:
+        move_1 =input("Player one move ")
+        move_2 = input("Player two move ")
+
+        if score1 == 3 or score2 == 3:
+            writing(score1,score2)
+            break
+
+        if move_1 == move_2:
+            writing(score1,score2)
+            continue
+    
+        if move_1 == "paper" and move_2 == "stone":
+            score1 = score1 + 1
+            writing(score1,score2)
+        elif move_1 == "paper" and move_2 == "scisors":
+            score2 = score2 + 1
+            writing(score1,score2)
+        if move_1 == "stone" and move_2 == "paper":
+            score2 = score2 + 1
+            writing(score1,score2)
+        elif move_1 == "stone" and move_2 == "scisors":
+            score1 = score1+1
+            writing(score1,score2)
+        if move_1 == "scisors" and move_2 == "paper":
+            score1 = score1+1
+            writing(score1,score2)
+        elif move_1 == "scisors" and move_2 == "stone":
+            score2 = score2 +1
+            writing(score1,score2)
+
+    if score1 == 3:
+        return 1
+    elif score2 == 3:
+        return 2
+
+game(score1, score2)
+
+if game(score1, score2) == 1:
+        print("Player one won")
+elif game(score1, score2) == 2:
+        print("Player two won")
+        
+want=input("Do you want play next time")
+if want == "yes":
+        game(score1, score2)
+if want == "no":
+    print("Bye")
